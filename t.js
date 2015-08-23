@@ -14,8 +14,9 @@ var onloadHandler = function() {
   // Uncaught SyntaxError: Unexpected token )
   // var onClickHandler = () => { return "hello"; };
 
-  let onClickHandler = function() => { return "hello"; };
-  document.addEventListener('DOMContentLoaded', onloadHandler, false);
+  let onClickHandler = function() {
+    console.log('hello');
+  };
   document
     .querySelector('#sample01')
     .addEventListener('click', onClickHandler, /* allow evenet from untrusted content: */ false);
@@ -26,5 +27,7 @@ var onloadHandler = function() {
       this.languages = languages;
     }
   }
+  let i = new Developper('hhkb pro2', ['c','php','python','jaava','sh/bash/zsh script']);
+  console.dir(i);
 };
 document.addEventListener('DOMContentLoaded', onloadHandler, false);
